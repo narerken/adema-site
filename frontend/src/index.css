@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Nunito';
+  src: local('Nunito');
+}
+
+:root {
+  --cream: #fbf6ee;
+  --cream-deep: #f5ead9;
+  --ink: #3a2e2a;
+  --ink-soft: #7a6a60;
+  --pink: #f6c9d0;
+  --pink-deep: #ec9fb0;
+  --blue: #bcd6ea;
+  --cat-black: #211f22;
+  --card: #ffffff;
+  --ring: #e9ddc9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ring);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.font-hand {
+  font-family: 'Segoe Print', 'Comic Sans MS', 'Nunito', cursive;
+}
+
+.card-soft {
+  background: var(--card);
+  border-radius: 28px;
+  box-shadow: 0 10px 30px -12px rgba(120, 90, 60, 0.18);
+  border: 1px solid rgba(233, 221, 201, 0.7);
+}
+
+.btn-cute {
+  border-radius: 999px;
+  padding: 0.6rem 1.4rem;
+  background: var(--pink);
+  color: #5a2a3a;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 6px 18px -6px rgba(236, 159, 176, 0.6);
+}
+.btn-cute:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+.btn-cute:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.bg-dots {
+  background-image: radial-gradient(var(--ring) 1.3px, transparent 1.3px);
+  background-size: 22px 22px;
+}

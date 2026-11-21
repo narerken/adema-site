@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.env
+.env.local
+backend/data/
+backend/uploads/photos/*
+backend/uploads/music/*
+!backend/uploads/photos/.gitkeep
+!backend/uploads/music/.gitkeep
+*.log

@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./backend
+    container_name: adema-backend
+    restart: unless-stopped
+    environment:
+      - PORT=8080
+      - OWNER_PASSCODE=${OWNER_PASSCODE:-owner123}
+      - ADEMA_PASSCODE=${ADEMA_PASSCODE:-adema123}
+      - ALLOWED_ORIGIN=${ALLOWED_ORIGIN:-*}
+    volumes:
+      - adema_uploads:/app/uploads
+      - adema_data:/app/data
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: ""
+    container_name: adema-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  adema_uploads:
+  adema_data:
